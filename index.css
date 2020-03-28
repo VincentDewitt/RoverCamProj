@@ -1,3 +1,11 @@
 .hidden{
    display: none; 
 }
+.hidden_alert{
+   display:none;
+   text-emphasis-color: red;
+}
+p{
+   display: inline;
+   color: red;
+}
