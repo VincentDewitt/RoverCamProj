@@ -3,7 +3,7 @@
 const searchURL = 
     'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos';
 
-const apikey = 'nN5sELSIkeojkED4R4mwfoozc1zwejGHjaUVG3ON';
+const apikey = '';
 
 function getRoverphoto(maxResults,searchDate,searchCam){
    let params = {
@@ -91,9 +91,9 @@ function watchForm(){
    $("#js-form-soldate").on('submit', event=>{
        $("p").addClass("hidden_alert");
         event.preventDefault();
-        let searchDateSol = $("js-sole-search").val();
+        let searchDateSol = $("#js-sole-search").val();
         console.log(searchDateSol);
-        let searchCamSol = $("cam-option-sol:checked").val();
+        let searchCamSol = $(".cam-option-sol:checked").val();
         console.log(searchCamSol);
         let maxResultsSol = $("#js-max-results-sol").val();
         console.log(maxResultsSol);
