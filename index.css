@@ -23,7 +23,7 @@ margin-left: 25px;
 
 }
 body{
-  background-color: black;
+   background-image: url("./Wireframe_content/background.jpg");
    align-content: center;
 }
 form,h1,h3 {
@@ -45,5 +45,9 @@ form,h1,h3 {
       display: flex;
       flex-direction: column;
       justify-content: center;
+   }
+   div .soldatesearchform{
+      padding-top: 20px;
+      margin-left: 0;
    }
 }
