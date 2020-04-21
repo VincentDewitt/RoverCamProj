@@ -14,7 +14,6 @@ function getRoverphoto(maxResults,searchDate,searchCam){
     const queryString = formatParams(params)
     let url= searchURL + '?' + queryString
     url= url.replace(" ","");
-    console.log(url);
     
      fetch (url)
      .then(response =>{
@@ -32,7 +31,6 @@ function GetRoverphotoSol(maxResultsSol,searchDateSol,searchCamSol){
     const queryString= formatParams(params)
     let url= searchURL + '?' + queryString
     url= url.replace(" ","");
-    console.log(url);
     fetch (url)
     .then(response =>{
         return response.json();
@@ -50,11 +48,7 @@ function formatParams(params){
 
 function displayRoverphotos(responseJson){
     let maxResults = $("#js-max-results").val();
-       console.log(maxResults);
-
     let maxResultsSol = $("#js-max-results-sol").val();
-    console.log(maxResultsSol);
-    
     $("#results").empty();
     $("#results").removeClass('hidden');
     if (responseJson.photos.length == 0 ){
@@ -76,27 +70,19 @@ function watchForm(){
         $("p").addClass("hidden_alert");
         event.preventDefault();
        let searchDate= $("#js-date-search").val();
-       console.log(searchDate);
        let searchCam= $(".cam-option:checked").val();
-       console.log(searchCam);
        let maxResults = $("#js-max-results").val();
-       console.log(maxResults);
        getRoverphoto(maxResults,searchDate,searchCam);
-       console.log(searchCam);
        if (searchCam==undefined) {
            $("p").removeClass("hidden_alert");
-           console.log
        }
     });
    $("#js-form-soldate").on('submit', event=>{
        $("p").addClass("hidden_alert");
         event.preventDefault();
         let searchDateSol = $("#js-sole-search").val();
-        console.log(searchDateSol);
         let searchCamSol = $(".cam-option-sol:checked").val();
-        console.log(searchCamSol);
         let maxResultsSol = $("#js-max-results-sol").val();
-        console.log(maxResultsSol);
         GetRoverphotoSol(maxResultsSol,searchDateSol,searchCamSol);
    }) 
 }
